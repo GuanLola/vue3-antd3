@@ -21,7 +21,6 @@ const key = computed(() => {
 
 <style lang="scss" scoped>
 .app-main {
-  /* 50 = navbar height  */
   min-height: calc(100vh - 50px);
   width: 100%;
   position: relative;

@@ -10,6 +10,7 @@ export const constantRoutes = [
   {
     path: "/",
     name: "dashboard",
+    redirect: "/dashboard",
     component: Layout,
     children: [
       {
@@ -19,6 +20,31 @@ export const constantRoutes = [
         meta: {
           title: "首页",
           icon: "dashboard",
+        },
+      },
+    ],
+  },
+];
+
+export const asyncRoutes = [
+  {
+    path: "/permission",
+    component: Layout,
+    redirect: "/permission/index",
+    name: "Permission",
+    meta: {
+      title: "权限管理",
+      icon: "lock",
+      roles: ["admin", "editor"], // you can set roles in root nav
+      alwaysShow: true, // will always show the root menu
+    },
+    children: [
+      {
+        path: "index",
+        component: () => import("@/views/permission/index.vue"),
+        meta: {
+          title: "权限管理",
+          roles: ["admin"], // or you can only set roles in sub nav
         },
       },
     ],
