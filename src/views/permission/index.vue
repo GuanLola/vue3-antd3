@@ -1,7 +1,5 @@
 <template>
-  <div>
-    dashboard
-  </div>
+  <div class="permission-container">权限管理</div>
 </template>
 
 <script setup>

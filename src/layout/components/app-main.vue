@@ -9,7 +9,7 @@
   </section>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 
@@ -21,7 +21,6 @@ const key = computed(() => {
 
 <style lang="scss" scoped>
 .app-main {
-  /* 50 = navbar height  */
   min-height: calc(100vh - 50px);
   width: 100%;
   position: relative;
