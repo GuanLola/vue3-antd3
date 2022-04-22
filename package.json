@@ -17,6 +17,7 @@
     "lodash-es": "^4.17.21",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
+    "path": "^0.12.7",
     "path-to-regexp": "^6.2.0",
     "pinia": "^2.0.13",
     "screenfull": "^6.0.1",

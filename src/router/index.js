@@ -23,15 +23,19 @@ export const constantRoutes = [
         }
       }
     ]
+  },
+  {
+    path: '/404',
+    component: () => import('@/views/error-page/404.vue'),
   }
 ]
 
 export const asyncRoutes = [
   {
     path: '/permission',
-    component: Layout,
-    redirect: '/permission/index',
     name: 'Permission',
+    redirect: '/permission/index',
+    component: Layout,
     meta: {
       title: '权限管理',
       icon: 'lock',
@@ -42,12 +46,26 @@ export const asyncRoutes = [
       {
         path: 'index',
         component: () => import('@/views/permission/index.vue'),
+        name: 'PermissionIndex',
         meta: {
           title: '权限管理',
           roles: ['admin'] // or you can only set roles in sub nav
         }
+      },
+      {
+        path: 'directive',
+        component: () => import('@/views/permission/directive.vue'),
+        name: 'PermissionDirective',
+        meta: {
+          title: '指令权限'
+        }
       }
     ]
+  },
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/404',
+    hidden: true
   }
 ]
 

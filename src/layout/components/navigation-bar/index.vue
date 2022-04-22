@@ -9,7 +9,7 @@
         <template #overlay>
           <a-menu>
             <a-menu-item>
-              <a href="javascript:;" @click="handleLogout">登出</a>
+              <a href="javascript:;" @click="handleLogout">退出登录</a>
             </a-menu-item>
           </a-menu>
         </template>

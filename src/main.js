@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import store from './stores'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 import '@/router/permission'
@@ -13,7 +13,7 @@ import 'virtual:svg-icons-register'
 
 const app = createApp(App)
 
-app.use(createPinia())
+app.use(store)
 app.use(router)
 app.use(Antd)
 loadSvg(app)

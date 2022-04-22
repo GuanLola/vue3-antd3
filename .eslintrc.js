@@ -1,30 +1,29 @@
-/* eslint-env node */
-require("@rushstack/eslint-patch/modern-module-resolution");
-
 module.exports = {
   root: true,
   env: {
-    browser: true,
-    node: true,
-    es6: true
+    node: true
   },
   extends: [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "@vue/eslint-config-prettier",
-    "plugin:vue/vue3-recommended",
-    "plugin:vue/vue3-strongly-recommended",
-    "@vue/standard", // module eslint no error
+    'plugin:vue/strongly-recommended',
+    '@vue/standard'
   ],
-  env: {
-    "vue/setup-compiler-macros": true,
+  rules: {},
+  parserOptions: {
+    parser: 'babel-eslint',
+    ecmaFeatures: {
+      // 支持装饰器
+      legacyDecorators: true
+    }
   },
-  rules: {
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
-  },
-  globals: {
-    Atomics: "readonly",
-    SharedArrayBuffer: "readonly",
-    process: true,
-  },
-};
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+      ],
+      env: {
+        jest: true
+      }
+    }
+  ]
+}

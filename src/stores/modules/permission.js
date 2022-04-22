@@ -1,3 +1,4 @@
+import store from "@/stores";
 import { defineStore } from "pinia";
 import { constantRoutes, asyncRoutes } from "../../router";
 
@@ -33,7 +34,7 @@ export const usePermissionStore = defineStore({
   },
   actions: {
     setRoutes(roles) {
-      let accessedRoutes;
+      let accessedRoutes
       if (roles.includes("admin")) {
         accessedRoutes = asyncRoutes || [];
       } else {
@@ -44,3 +45,8 @@ export const usePermissionStore = defineStore({
     },
   },
 });
+
+
+export function usePermissionStoreHook() {
+  return usePermissionStore(store)
+}
